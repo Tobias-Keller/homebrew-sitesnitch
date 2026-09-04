@@ -9,8 +9,8 @@
 class Snitch < Formula
   desc "Website-Crawler für technische SEO-Audits und Relaunch-Redirect-Maps"
   homepage "https://sitesnitch.de"
-  url "https://sitesnitch.de/download/snitch-1.0.0.tar.gz"
-  sha256 "efd804e96d10ea49cdef42229e23c4971aacb09947fd8d18a77b16751d6c070e"
+  url "https://sitesnitch.de/download/snitch-1.0.1.tar.gz"
+  sha256 "f39332ba878317283a1925fd3ae0c5f4fc8ccc316713ca34ce518fdb20fdb3f0"
   # Kein `version`: Homebrew liest sie aus dem Dateinamen der URL, und eine
   # zweite Angabe daneben ist eine zweite Stelle, die beim nächsten Release
   # vergessen werden kann (`brew audit` beanstandet sie ausdrücklich).
@@ -41,6 +41,12 @@ class Snitch < Formula
   end
 
   test do
+    # Die eigentliche Frage einer Formel: Ist das installierte Binary das, was
+    # die URL versprochen hat? `version` kommt aus dem Dateinamen der URL, die
+    # Ausgabe aus dem Binary — stimmen sie überein, kann kein Tarball unter
+    # falschem Namen ausgeliefert worden sein.
+    assert_equal "snitch #{version}", shell_output("#{bin}/snitch --version").strip
+
     # `snitch` ohne Befehl ist ein Bedienfehler: Ausgabe auf **stderr**, Exit 1.
     # Beides gehört ins Kommando — `shell_output` fängt nur stdout, und ohne
     # das `2>&1` verglich der Test gegen eine leere Zeichenkette und war
