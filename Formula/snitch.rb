@@ -9,8 +9,8 @@
 class Snitch < Formula
   desc "Website-Crawler für technische SEO-Audits und Relaunch-Redirect-Maps"
   homepage "https://sitesnitch.de"
-  url "https://sitesnitch.de/download/snitch-1.0.2.tar.gz"
-  sha256 "2eff05abc714273c11930e01464d73c5cea314ebb15dbc9e6ec5b85d062e7b78"
+  url "https://sitesnitch.de/download/snitch-1.0.3.tar.gz"
+  sha256 "79cd1fae16be1c53206afdd047d7645f134111e913887ab431e14aab1e0e3ac9"
   # Kein `version`: Homebrew liest sie aus dem Dateinamen der URL, und eine
   # zweite Angabe daneben ist eine zweite Stelle, die beim nächsten Release
   # vergessen werden kann (`brew audit` beanstandet sie ausdrücklich).
